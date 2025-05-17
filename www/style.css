@@ -76,4 +76,94 @@ body{
         transform: rotate(360deg);
     }
 }
-    
+
+/* Input Filled Start */
+
+ #TextInput {
+    background-color: #181818a8;
+    border-color: blue;
+    box-shadow: 0 0 20px rgb(25, 0, 255), 
+        inset 0 0 0px rgb(25, 0, 255);
+    border-radius: 8px;
+    color: white;
+    padding: 3px 0px 3px 20px;
+    margin: 0px 20%;
+}
+
+.input-field {
+    background-color: #181818a8;
+    border: none;
+    width: 95%;
+    outline: none;
+    color: white;
+    font-family: cursive;
+}
+
+.glow-on-hover {
+    width: 35px;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: white;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00 #48FF00, #00FFD5, #0038FF, #A700FF, #FF00B3, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur();
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    background: #181818a8;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:active:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+/* Input Filled End */
